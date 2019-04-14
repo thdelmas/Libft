@@ -6,7 +6,7 @@
 #    By: thdelmas <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/24 16:49:40 by thdelmas          #+#    #+#              #
-#    Updated: 2019/04/14 19:12:15 by thdelmas         ###   ########.fr        #
+#    Updated: 2019/04/14 20:05:42 by thdelmas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -97,5 +97,8 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+so:
+	cc -shared -o libft.so -fPIC $(FILES)
 
 .PHONY: clean fclean all re
