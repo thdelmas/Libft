@@ -6,7 +6,7 @@
 #    By: thdelmas <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/24 16:49:40 by thdelmas          #+#    #+#              #
-#    Updated: 2019/03/24 19:51:29 by thdelmas         ###   ########.fr        #
+#    Updated: 2019/04/14 19:12:15 by thdelmas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,6 +76,7 @@ ft_sqrt.c			\
 ft_power.c			\
 ft_str_dupsize.c	\
 ft_factorial.c		\
+ft_joinfree.c		\
 ft_lstmap.c
 
 OBJ= $(subst .c,.o, $(FILES))
