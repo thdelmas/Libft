@@ -6,7 +6,7 @@
 #    By: thdelmas <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/16 17:21:54 by thdelmas          #+#    #+#              #
-#    Updated: 2019/04/17 00:27:10 by thdelmas         ###   ########.fr        #
+#    Updated: 2019/04/17 01:23:06 by thdelmas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,7 +60,7 @@ CLEAR = \033[0;0m
 .PHONY: all, clean, fclean, re, so, hey, compil
 
 ### Rules ###
-all: hey $(OBJ_DIR) $(NAME)
+all: hey $(NAME)
 	@printf "$(WBLUE)\t- THDELMAS -\t$(CLEAR)\n"
 
 ### Mkdir obj ###
@@ -71,13 +71,13 @@ $(OBJ_DIR):
 	@printf "$(CLEAR)"
 
 ### Compilation ###
-$(OBJ_DIR)/%.o: compil $(SRC_DIR)/%.c
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR) compil
 	@printf "$(GREEN)"
 	$(CC) $(CFLAGS) -I $(INC_DIR) -o $@ -c $(SRC_DIR)/$(patsubst %.o,%.c,$(@F))
 	@printf "$(CLEAR)"
 
 ### Link ###
-$(NAME): $(OBJ) $(INC)
+$(NAME): $(OBJ)
 	@printf "$(WRED)\t-  - LINK -  -\t$(CLEAR)\n"
 	@printf "$(GREEN)"
 	ar rc $(NAME) $(OBJ)
