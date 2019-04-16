@@ -6,7 +6,7 @@
 #    By: thdelmas <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/16 17:21:54 by thdelmas          #+#    #+#              #
-#    Updated: 2019/04/17 01:23:06 by thdelmas         ###   ########.fr        #
+#    Updated: 2019/04/17 01:29:31 by thdelmas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,7 +77,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR) compil
 	@printf "$(CLEAR)"
 
 ### Link ###
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) $(INC) Makefile
 	@printf "$(WRED)\t-  - LINK -  -\t$(CLEAR)\n"
 	@printf "$(GREEN)"
 	ar rc $(NAME) $(OBJ)
