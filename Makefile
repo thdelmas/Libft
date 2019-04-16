@@ -6,7 +6,7 @@
 #    By: thdelmas <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/16 17:21:54 by thdelmas          #+#    #+#              #
-#    Updated: 2019/04/16 23:02:43 by thdelmas         ###   ########.fr        #
+#    Updated: 2019/04/16 23:03:28 by thdelmas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -122,8 +122,8 @@ gitsave: hey fclean
 	@printf "GIT AUTO-SAVE !"
 	@sleep 0.5
 	@git commit -m "auto-save"
-	@git push
 	@printf "$(CLEAR)"
+	@git push
 
 ### Norminette ###
 norm:
