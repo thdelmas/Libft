@@ -6,11 +6,12 @@
 #    By: thdelmas <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/16 17:21:54 by thdelmas          #+#    #+#              #
-#    Updated: 2019/04/16 18:04:17 by thdelmas         ###   ########.fr        #
+#    Updated: 2019/04/16 22:59:06 by thdelmas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
+PROJECT = LIBFT
 
 ### Directories ###
 SRC_DIR = .
@@ -49,81 +50,85 @@ INC = $(addprefix $(INC_DIR)/,$(H_FILES))
 ### Colors ###
 WHITE = \033[0m
 CYAN = \033[36m
-GREEN = \033[32m
-BOLDRED = \033[1m\033[31m
+GREEN = \033[1m\033[32m
+WRED = \033[96;41m
+WBLUE = \033[31;44m
 YELLOW = \033[33m
-OVERRIDE = \033[K
+CLEAR = \033[0;0m
 
 ### Phony ###
-.PHONY: all, clean, fclean, re
+.PHONY: all, clean, fclean, re, so, hey, compil
 
 ### Rules ###
 all: hey $(OBJ_DIR) $(FT_LIB) $(MLX_LIB) $(NAME)
+	@printf "$(WBLUE)\t- THDELMAS -\t$(CLEAR)\n"
 
 ### Mkdir obj ###
 $(OBJ_DIR):
-	@printf "$(BOLDRED)\n---------  $(CYAN) -  - MKDIR $(OBJ_DIR) -  - $(BOLDRED)  ---------$(OVERRIDE)\n"
+	@printf "$(WRED)\t- - MKDIR $(OBJ_DIR) -  -\t$(CLEAR)\n"
 	@printf "$(GREEN)"
 	mkdir -p $(OBJ_DIR)
-	@printf "$(OVERRIDE)"
+	@printf "$(CLEAR)"
 
 ### Compilation ###
 $(OBJ_DIR)/%.o: compil $(SRC_DIR)/%.c
 	@printf "$(GREEN)"
-	$(CC) $(CFLAGS) -I $(INC_DIR) -o $@ -c $(patsubst %.o,%.c,$(patsubst %$(OBJ_DIR),%$(SRC_DIR),$(@)))
-	@printf "$(OVERRIDE)"
-
+	$(CC) $(CFLAGS) -I $(INC_DIR) -o $@ -c $(SRC_DIR)/$(patsubst %.o,%.c,$(@F))
+	@printf "$(CLEAR)"
 
 ### Link ###
 $(NAME): $(OBJ) $(INC)
-	@printf "$(BOLDRED)\n---------  $(CYAN) -  - LINK -  - $(BOLDRED)  ---------$(OVERRIDE)\n"
+	@printf "$(WRED)\t-  - LINK -  -\t$(CLEAR)\n"
 	@printf "$(GREEN)"
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
-	@printf "$(OVERRIDE)"
+	@printf "$(CLEAR)"
 
 ### Linux ###
 so:
-	cc -shared -o libft.so -fPIC $(FILES)
+	@printf "$(WRED)\t-  - LINUX -  -\t$(CLEAR)\n"
+	@printf "$(GREEN)"
+	cc -shared -o $(patsubst %.a, %.so, $(NAME)) -fPIC $(FILES)
+	@printf "$(CLEAR)"
 
 ### Clean ###
 clean:
-	@printf "$(BOLDRED)\n---------  $(CYAN) -  - CLEAN -  - $(BOLDRED)  ---------$(OVERRIDE)\n"
+	@printf "$(WRED)\t-  - CLEAN -  -\t$(CLEAR)\n"
 	@printf "$(GREEN)"
 	rm -rf $(OBJ_DIR)
-	@printf "$(OVERRIDE)"
+	@printf "$(CLEAR)"
 
 fclean: clean
-	@printf "$(BOLDRED)\n---------  $(CYAN) -  - FCLEAN -  - $(BOLDRED)  ---------$(OVERRIDE)\n"
+	@printf "$(WRED)\t-  - FCLEAN -  -\t$(CLEAR)\n"
 	@printf "$(GREEN)"
 	rm -rf $(NAME)
-	@printf "$(OVERRIDE)"
+	@printf "$(CLEAR)"
 
 re: hey fclean all
 
 ### Tools ###
 hey:
-	@printf "$(BOLDRED)\n---------  $(GREEN)- thdelmas - $(CYAN)LIBFT - $(BOLDRED)  ---------\n$(OVERRIDE)\n"
+	@printf "$(WBLUE)\t-  - $(PROJECT) -  - \t$(CLEAR)\n"
 
 compil:
-	@printf "$(BOLDRED)\n---------  $(CYAN) -  - COMPIL -  - $(BOLDRED)  ---------$(OVERRIDE)\n"
+	@printf "$(WRED)\t-  - COMPIL -  -\t$(CLEAR)\n"
 
 ### git-autosave ###
 gitsave: fclean
-	@printf "$(BOLDRED)\n---------  $(CYAN) -  - GIT SAVE FOR YOU	-  - $(BOLDRED)  ---------$(OVERRIDE)\n"
-	@printf "$(BOLDRED)---------  $(CYAN) -  - SRC INCLUDES LIBFT MAKEFILE	-  - $(BOLDRED)  ---------$(OVERRIDE)\n"
+	@printf "$(WBLUE)\t-  - GIT SAVE FOR YOU	-  -\t$(CLEAR)\n"
+	@printf "$(WRED)\t-  - SRC INCLUDES LIBFT MAKEFILE	-  -\t$(CLEAR)\n"
 	@printf "$(GREEN)"
 	@git add .
 	@printf "GIT AUTO-SAVE !"
 	@sleep 0.5
 	@git commit -m "auto-save"
 	@git push
-	@printf "$(OVERRIDE)"
+	@printf "$(CLEAR)"
 
 ### Norminette ###
 norm:
-	@printf "$(BOLDRED)\n---------  $(CYAN) -  - NORM 42	-  - $(BOLDRED)  ---------$(OVERRIDE)\n"
-	@printf "$(BOLDRED)\n---------  $(CYAN) -  - SRC INCLUDES LIBFT MAKEFILE	-  - $(BOLDRED)  ---------$(OVERRIDE)\n"
+	@printf "$(WRED)\t-  - NORM 42	-  -\t$(CLEAR)\n"
+	@printf "$(WRED)\t-  - SRC INCLUDES LIBFT MAKEFILE	-  -\t$(CLEAR)\n"
 	@printf "$(GREEN)"
 	@norminette -R CheckForbiddenSourceHeader $(HEADER) $(SRC_NAME)
-	@printf "$(OVERRIDE)"
+	@printf "$(CLEAR)"
