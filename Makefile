@@ -6,7 +6,7 @@
 #    By: thdelmas <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/16 17:21:54 by thdelmas          #+#    #+#              #
-#    Updated: 2019/04/16 22:59:06 by thdelmas         ###   ########.fr        #
+#    Updated: 2019/04/16 23:02:43 by thdelmas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -114,7 +114,7 @@ compil:
 	@printf "$(WRED)\t-  - COMPIL -  -\t$(CLEAR)\n"
 
 ### git-autosave ###
-gitsave: fclean
+gitsave: hey fclean
 	@printf "$(WBLUE)\t-  - GIT SAVE FOR YOU	-  -\t$(CLEAR)\n"
 	@printf "$(WRED)\t-  - SRC INCLUDES LIBFT MAKEFILE	-  -\t$(CLEAR)\n"
 	@printf "$(GREEN)"
