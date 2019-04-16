@@ -6,7 +6,7 @@
 #    By: thdelmas <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/16 17:21:54 by thdelmas          #+#    #+#              #
-#    Updated: 2019/04/17 00:09:05 by thdelmas         ###   ########.fr        #
+#    Updated: 2019/04/17 00:27:10 by thdelmas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJ_DIR = ./obj
 
 ###  CC && FLAGS ###
 CC = clang
-CFLAGS = -Wall -Werror -Wextra -I. -c
+CFLAGS = -Wall -Werror -Wextra
 
 ### FILES ###
 C_FILES = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
@@ -114,6 +114,7 @@ compil:
 	@printf "$(WRED)\t-  - COMPIL -  -\t$(CLEAR)\n"
 
 ### git-autosave ###
+savegit: gitsave
 gitsave: hey fclean
 	@printf "$(WBLUE)\t-  - GIT SAVE FOR YOU	-  -\t$(CLEAR)\n"
 	@printf "$(WRED)\t-  - SRC INCLUDES LIBFT MAKEFILE	-  -\t$(CLEAR)\n"
