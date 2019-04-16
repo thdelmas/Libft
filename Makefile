@@ -6,7 +6,7 @@
 #    By: thdelmas <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/16 17:21:54 by thdelmas          #+#    #+#              #
-#    Updated: 2019/04/16 23:03:28 by thdelmas         ###   ########.fr        #
+#    Updated: 2019/04/17 00:09:05 by thdelmas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,7 +60,7 @@ CLEAR = \033[0;0m
 .PHONY: all, clean, fclean, re, so, hey, compil
 
 ### Rules ###
-all: hey $(OBJ_DIR) $(FT_LIB) $(MLX_LIB) $(NAME)
+all: hey $(OBJ_DIR) $(NAME)
 	@printf "$(WBLUE)\t- THDELMAS -\t$(CLEAR)\n"
 
 ### Mkdir obj ###
