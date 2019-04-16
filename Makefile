@@ -6,7 +6,7 @@
 #    By: thdelmas <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/16 17:21:54 by thdelmas          #+#    #+#              #
-#    Updated: 2019/04/16 18:03:42 by thdelmas         ###   ########.fr        #
+#    Updated: 2019/04/16 18:04:17 by thdelmas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -111,7 +111,7 @@ compil:
 ### git-autosave ###
 gitsave: fclean
 	@printf "$(BOLDRED)\n---------  $(CYAN) -  - GIT SAVE FOR YOU	-  - $(BOLDRED)  ---------$(OVERRIDE)\n"
-	@printf "$(BOLDRED)\n---------  $(CYAN) -  - SRC INCLUDES LIBFT MAKEFILE	-  - $(BOLDRED)  ---------$(OVERRIDE)\n"
+	@printf "$(BOLDRED)---------  $(CYAN) -  - SRC INCLUDES LIBFT MAKEFILE	-  - $(BOLDRED)  ---------$(OVERRIDE)\n"
 	@printf "$(GREEN)"
 	@git add .
 	@printf "GIT AUTO-SAVE !"
