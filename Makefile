@@ -6,7 +6,7 @@
 #    By: thdelmas <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/16 17:21:54 by thdelmas          #+#    #+#              #
-#    Updated: 2019/04/17 01:35:18 by thdelmas         ###   ########.fr        #
+#    Updated: 2019/04/22 17:22:32 by thdelmas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ C_FILES = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 		  ft_putendl.c ft_putendl_fd.c ft_putnbr.c ft_putnbr_fd.c \
 		  ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c \
 		  ft_is_prime.c ft_sqrt.c ft_power.c ft_str_dupsize.c ft_factorial.c \
-		  ft_joinfree.c ft_lstmap.c
+		  ft_joinfree.c ft_lstmap.c ft_2d_chardup.c ft_free_2d_char.c
 
 O_FILES = $(C_FILES:%.c=%.o)
 

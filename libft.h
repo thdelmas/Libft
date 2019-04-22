@@ -6,7 +6,7 @@
 /*   By: thdelmas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 21:12:27 by thdelmas          #+#    #+#             */
-/*   Updated: 2019/04/14 19:11:59 by thdelmas         ###   ########.fr       */
+/*   Updated: 2019/04/22 17:25:24 by thdelmas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,4 +95,6 @@ int				ft_is_prime(int nb);
 int				ft_power(int nb, int power);
 int				ft_factorial(int nb);
 char			*ft_str_dupsize(const char *s, size_t size);
+void			ft_free_2d_char(char ***tab);
+char			**ft_2d_chardup(const char **tab);
 #endif
