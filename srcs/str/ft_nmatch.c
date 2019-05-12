@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_2d_char.c                                  :+:      :+:    :+:   */
+/*   ft_nmatch.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thdelmas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/22 17:21:51 by thdelmas          #+#    #+#             */
-/*   Updated: 2019/04/22 17:23:16 by thdelmas         ###   ########.fr       */
+/*   Created: 2019/05/05 22:33:54 by thdelmas          #+#    #+#             */
+/*   Updated: 2019/05/05 22:34:12 by thdelmas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_free_2d_char(char ***buff)
+int		ft_nmatch(const char *s1, const char *s2)
 {
-	char **tmp;
-
-	tmp = *buff;
-	if (tmp)
-		while (*tmp)
-		{
-			free(*tmp);
-			tmp++;
-		}
-	free(*buff);
-	*buff = NULL;
+	if (s1[0] == '\0' && s2[0] == '\0')
+		return (1);
+	if (s2[0] == '*' && s2[1] == '\0')
+		return (1);
+	if (s1[0] == '\0' && s2[0] == '*')
+		return (ft_nmatch(s1, s2 + 1));
+	if (s2[0] == '*')
+		return (ft_nmatch(s1, s2 + 1) + ft_nmatch(s1 + 1, s2));
+	if (s1[0] == s2[0])
+		return (ft_nmatch(s1 + 1, s2 + 1));
+	return (0);
 }

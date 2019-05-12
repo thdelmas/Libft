@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strclen.c                                       :+:      :+:    :+:   */
+/*   ft_match.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thdelmas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/22 20:15:32 by thdelmas          #+#    #+#             */
-/*   Updated: 2018/12/22 20:19:40 by thdelmas         ###   ########.fr       */
+/*   Created: 2019/05/05 22:32:54 by thdelmas          #+#    #+#             */
+/*   Updated: 2019/05/05 22:33:06 by thdelmas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int		ft_strclen(const char *s, char c)
+int		ft_match(const char *s1, const char *s2)
 {
-	int i;
-
-	i = 0;
-	while (s[i] && s[i] != c)
-		i++;
-	return (i);
+	if (s1[0] == '\0' && s2[0] == '\0')
+		return (1);
+	if (s2[0] == '*' && s2[1] == '\0')
+		return (1);
+	if (s1[0] == '\0' && s2[0] == '*')
+		return (ft_match(s1, s2 + 1));
+	if (s2[0] == '*')
+		return (ft_match(s1, s2 + 1) || ft_match(s1 + 1, s2));
+	if (s1[0] == s2[0])
+		return (ft_match(s1 + 1, s2 + 1));
+	return (0);
 }

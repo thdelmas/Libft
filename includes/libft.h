@@ -6,7 +6,7 @@
 /*   By: thdelmas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 21:12:27 by thdelmas          #+#    #+#             */
-/*   Updated: 2019/04/22 17:25:24 by thdelmas         ###   ########.fr       */
+/*   Updated: 2019/04/24 17:46:26 by thdelmas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int				ft_isdigit(int c);
 int				ft_isalnum(int c);
 int				ft_isascii(int c);
 int				ft_isprint(int c);
+int				ft_isblank(int c);
 int				ft_isalnumstr(char *str);
 int				ft_isdigitstr(char *str);
 int				ft_toupper(int c);

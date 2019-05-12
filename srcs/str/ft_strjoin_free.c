@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_2d_chardup.c                                    :+:      :+:    :+:   */
+/*   ft_strjoin_free.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thdelmas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/22 17:21:05 by thdelmas          #+#    #+#             */
-/*   Updated: 2019/04/22 17:25:33 by thdelmas         ###   ########.fr       */
+/*   Created: 2019/05/12 15:15:07 by thdelmas          #+#    #+#             */
+/*   Updated: 2019/05/12 15:15:10 by thdelmas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_2d_chardup(const char **tab)
+char	*ft_strjoin_free(const char *s1, const char *s2, char *tofree)
 {
-	char	**ret;
-	int		i;
+	char *dest;
 
-	i = 0;
-	ret = NULL;
-	if (tab)
-	{
-		while (tab[i])
-			i++;
-		if (!(ret = (char **)malloc(sizeof(char *) * (i + 1))))
-			return (NULL);
-		i = -1;
-		while (tab[++i])
-			ret[i] = ft_strdup(tab[i]);
-		ret[i] = NULL;
-	}
-	return (ret);
+	dest = ft_strjoin(s1, s2);
+	if (tofree)
+		free(tofree);
+	return (dest);
 }

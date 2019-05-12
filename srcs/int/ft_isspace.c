@@ -1,23 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_joinfree.c                                      :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: thdelmas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/14 19:09:12 by thdelmas          #+#    #+#             */
-/*   Updated: 2019/04/14 19:11:01 by thdelmas         ###   ########.fr       */
+/*   Created: 2019/05/04 15:55:31 by thdelmas          #+#    #+#             */
+/*   Updated: 2019/05/05 17:21:03 by thdelmas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_joinfree(const char *s1, const char *s2, char *tofree)
+int		ft_isspace(int c)
 {
-	char *dest;
-
-	dest = ft_strjoin(s1, s2);
-	if (tofree)
-		free(tofree);
-	return (dest);
+	return (c == ' ' || c == '\t' || c == '\n' || c == '\f');
 }
