@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp_n.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: thdelmas <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tmeyer <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/09 21:31:27 by thdelmas          #+#    #+#             */
-/*   Updated: 2019/08/22 01:32:53 by ede-ram          ###   ########.fr       */
+/*   Created: 2019/08/24 22:27:57 by tmeyer            #+#    #+#             */
+/*   Updated: 2019/08/24 22:43:54 by tmeyer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+int		ft_strncmp_n(const char *s1, const char *s2, size_t n)
 {
-	const unsigned char *ps;
-	unsigned char		oct;
+	unsigned char *ps1;
+	unsigned char *ps2;
 
-	if (!s)
+	ps1 = (unsigned char *)s1;
+	ps2 = (unsigned char *)s2;
+	if (!n)
 		return (0);
-	oct = (unsigned char)c;
-	ps = (const unsigned char *)s;
-	while (n--)
+	while (*ps1 == *ps2 && *ps1 && --n)
 	{
-		if (*ps == oct)
-			return ((void *)ps);
-		else
-			ps++;
+		ps1++;
+		ps2++;
 	}
-	return (NULL);
+	return (n != 0 ? 1 : (int)(*ps1 - *ps2));
 }
