@@ -6,7 +6,7 @@
 #    By: maboye <maboye@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/30 14:33:15 by thdelmas          #+#    #+#              #
-#    Updated: 2019/09/21 23:28:51 by thdelmas         ###   ########.fr        #
+#    Updated: 2019/09/30 15:58:16 by thdelmas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ C_FILES = \
 
 C_FILES_conv = \
 	ft_atoi.c \
-	ft_itoa.c
+	ft_itoa.c \
+	ft_fdtoa.c
 
 C_FILES_int = \
 	ft_is_prime.c \
