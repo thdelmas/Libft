@@ -6,7 +6,7 @@
 /*   By: thdelmas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 21:12:27 by thdelmas          #+#    #+#             */
-/*   Updated: 2019/09/30 17:55:19 by thdelmas         ###   ########.fr       */
+/*   Updated: 2019/09/30 17:59:46 by thdelmas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ void			ft_memdel(void **ap);
 
 void			ft_tab_strdel(char ***as);
 char			*ft_itoa(int n);
+char			*ft_fdtoa(int fd, int buff_size);
 int				ft_atoi(const char *str);
 
 void			ft_putchar(char c);
