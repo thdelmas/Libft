@@ -6,7 +6,7 @@
 #    By: maboye <maboye@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/30 14:33:15 by thdelmas          #+#    #+#              #
-#    Updated: 2019/09/30 17:49:01 by thdelmas         ###   ########.fr        #
+#    Updated: 2019/09/30 17:55:00 by thdelmas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -114,6 +114,7 @@ C_FILES_print = \
 	ft_putendl_fd.c \
 	ft_putnbr.c \
 	ft_putdbg.c \
+	ft_putdbg_nbr.c \
 	ft_putnbr_fd.c \
 	ft_putstr.c \
 	ft_putstr_fd.c
