@@ -6,7 +6,7 @@
 #    By: maboye <maboye@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/30 14:33:15 by thdelmas          #+#    #+#              #
-#    Updated: 2019/09/30 17:55:00 by thdelmas         ###   ########.fr        #
+#    Updated: 2019/10/03 19:10:02 by thdelmas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -96,6 +96,7 @@ C_FILES_str = \
 	ft_strnstr.c \
 	ft_strrchr.c \
 	ft_strsplit.c \
+	ft_strsplit_whitespaces.c \
 	ft_strstr.c \
 	ft_strsub.c \
 	ft_strtrim.c \

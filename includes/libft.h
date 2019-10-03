@@ -6,7 +6,7 @@
 /*   By: thdelmas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 21:12:27 by thdelmas          #+#    #+#             */
-/*   Updated: 2019/09/30 17:59:46 by thdelmas         ###   ########.fr       */
+/*   Updated: 2019/10/03 19:10:38 by thdelmas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int				ft_strequ(char const *s1, char const *s2);
 char			*ft_strtrim(char const *s);
 char			**ft_strsplit(char const *s, char splitchar);
+char			**ft_strsplit_whitespaces(char const *s);
 int				ft_strclen(const char *s, char c);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strjoin_free(const char *s1, const char *s2, char *tofree);
@@ -73,6 +74,7 @@ int				ft_isalpha(int c);
 int				ft_islower(int c);
 int				ft_isupper(int c);
 int				ft_isdigit(int c);
+int				ft_isspace(int c);
 int				ft_isalnum(int c);
 int				ft_isascii(int c);
 int				ft_isprint(int c);
