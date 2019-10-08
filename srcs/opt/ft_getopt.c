@@ -6,7 +6,7 @@
 /*   By: thdelmas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/14 16:35:28 by thdelmas          #+#    #+#             */
-/*   Updated: 2019/09/27 20:07:52 by thdelmas         ###   ########.fr       */
+/*   Updated: 2019/10/08 15:17:05 by thdelmas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ t_opt	*ft_get_sopt_arg(int *ac, char ***av, int i)
 	tmp = ft_strchr((*av)[1] + i, '=');
 	if (tmp)
 		arg = ft_strdup(tmp + 1);
-	else if (*ac > 2)
+	else if (*ac > 2 && ft_strcmp((*av)[2], "--"))
 	{
 		(*ac)--;
 		(*av)++;
@@ -102,7 +102,8 @@ t_opt	*ft_get_sopt(int *ac, char ***av, char *optstr)
 		return (NULL);
 	while (*++s)
 	{
-		tmp = ft_strchr(optstr, *s);
+		if (!(tmp = ft_strchr(optstr, *s)))
+			break ;
 		if (tmp[1] == ':' && (tmp[2] == '|' || !tmp[2]))
 			*optmp = ft_get_sopt_arg(ac, av, s - (*av)[1]);
 		else if (!tmp[1] || tmp[1] == '|')
@@ -118,10 +119,19 @@ t_opt	*ft_get_sopt(int *ac, char ***av, char *optstr)
 t_opt	*ft_getopt(int *ac, char ***av, char *optstr)
 {
 	t_opt	*tmp;
+	static char	*saveme = NULL;
 
 	tmp = NULL;
 	if (*ac <= 1)
 		return (NULL);
+	if (!saveme)
+		saveme = **av;
+	if (!ft_strcmp((*av)[1], "--"))
+	{
+		(*ac)--;
+		**av = saveme;
+		return (NULL);
+	}
 	if ((*av)[1][0] == '-' && (*av)[1][1] == '-' && (*av)[1][2])
 		tmp = ft_get_dopt(ac, av, optstr);
 	else if ((*av)[1][0] == '-' && (*av)[1][1])
@@ -131,14 +141,67 @@ t_opt	*ft_getopt(int *ac, char ***av, char *optstr)
 		ft_putstr_fd("ft_getopt: Error: ", 2);
 		ft_putstr_fd((*av)[1], 2);
 		ft_putendl_fd(" Invalid option", 2);
+		**av = saveme;
 		return (NULL);
 	}
 	if (!tmp)
 		return (NULL);
 	(*ac)--;
 	(*av)++;
-	if (!ft_strcmp((*av)[1], "--"))
+	if (ft_strcmp((*av)[1], "--"))
+	{
+		**av = saveme;
 		return (NULL);
+	}
 	tmp->next = ft_getopt(ac, av, optstr);
+	**av = saveme;
 	return (tmp);
 }
+
+// Si pas d'argv return NULL
+// Si argv == '--'
+	// swap av[0] av[1]; return NULL;
+// Si - && -
+	// lookup optstr ft_strclen('=');
+	// if :
+		// if + 1 = '='
+			// Create_opt
+		// else if (!av[2] || !ft_strcmp(av[2], "--"))
+			// Return NULL;
+		// else
+			// Create_opt
+	// else
+		// create_opt ; str++;
+	// swap av[0]
+	// ft_getopt
+// Sinon si -
+	// lookup optstr;
+	// if :
+		// if + 1 = '='
+			// Create_opt
+		// else if (!av[2] || !ft_strcmp(av[2], "--"))
+			// Return NULL;
+		// else
+			// Create_opt
+	// else
+		// create_opt ; str++;
+	// swap av[0]
+	// ft_getopt
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
