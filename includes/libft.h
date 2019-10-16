@@ -6,7 +6,7 @@
 /*   By: thdelmas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 21:12:27 by thdelmas          #+#    #+#             */
-/*   Updated: 2019/10/05 17:55:18 by thdelmas         ###   ########.fr       */
+/*   Updated: 2019/10/16 16:40:20 by thdelmas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ char			**ft_split_whitespaces(char const *s);
 int				ft_strclen(const char *s, char c);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strjoin_free(const char *s1, const char *s2, char *tofree);
+char			*ft_cjoin_free(const char *s1, char c, char *tofree);
 int				ft_strnequ(char const *s1, char const *s2, size_t n);
 char			*ft_strsub(char const *s, unsigned int start, size_t len);
 int				ft_match(const char *s1, const char *s2);

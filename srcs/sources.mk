@@ -6,7 +6,7 @@
 #    By: maboye <maboye@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/30 14:33:15 by thdelmas          #+#    #+#              #
-#    Updated: 2019/10/03 19:23:03 by thdelmas         ###   ########.fr        #
+#    Updated: 2019/10/16 16:40:42 by thdelmas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,6 +83,7 @@ C_FILES_str = \
 	ft_striteri.c \
 	ft_strjoin.c \
 	ft_strjoin_free.c \
+	ft_cjoin_free.c \
 	ft_strlcat.c \
 	ft_strlen.c \
 	ft_strmap.c \
