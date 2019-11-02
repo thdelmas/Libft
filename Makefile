@@ -6,7 +6,7 @@
 #    By: thdelmas <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/12 15:20:07 by thdelmas          #+#    #+#              #
-#    Updated: 2019/11/02 15:43:53 by thdelmas         ###   ########.fr        #
+#    Updated: 2019/11/02 15:45:29 by thdelmas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,8 +38,6 @@ include $(SRC_DIR)/sources.mk
 include $(INC_DIR)/includes.mk
 
 
-### INCLUDE TOOLS MAKEFILE ###
-include ./tools.mk
 
 ### ALL SUB DIRS ###
 SRC_SUB_DIRS = $(addprefix $(SRC_DIR)/,$(SUB_DIRS))
@@ -103,3 +101,6 @@ fclean: clean fclean_msg
 	$(RM) -rf $(NAME)
 
 re: fclean all
+
+### INCLUDE TOOLS MAKEFILE ###
+include ./tools.mk
