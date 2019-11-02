@@ -6,7 +6,7 @@
 #    By: thdelmas <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/12 15:20:07 by thdelmas          #+#    #+#              #
-#    Updated: 2019/10/16 16:59:14 by thdelmas         ###   ########.fr        #
+#    Updated: 2019/11/02 15:36:41 by thdelmas         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,7 +77,7 @@ $(OBJ_DIR): mkdir_msg
 ### Compilation ###
 .ONESHELL:
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(INC) Makefile | compil_msg
-	@echo "\033[1000D\033[K$(@F) \c"
+	@echo "\033[u\033[K$(@F) \c"
 	@$(CC) $(LFlAGS) $(CFLAGS) -o $@ -c $<
 
 ### Link ###
