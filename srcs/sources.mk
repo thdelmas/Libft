@@ -121,12 +121,5 @@ C_FILES_print = \
 	ft_putstr.c \
 	ft_putstr_fd.c
 
-C_FILES_opt = \
-	ft_getopt.c \
-	ft_fetch_opt.c \
-	ft_free_opts.c \
-	ft_create_opt.c \
-	ft_print_opt.c
-
 # SUPPA concat loop
 C_FILES += $(foreach SUB_DIR,$(SUB_DIRS),$(addprefix $(SUB_DIR)/,$(C_FILES_$(SUB_DIR))))
